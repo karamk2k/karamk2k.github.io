@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karam Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .typewriter {
+      font-family: monospace;
+      white-space: pre;
+      overflow: hidden;
+      border-right: 2px solid #00ff00;
+      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .hidden-scroll {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* Removing @apply, using direct Tailwind classes */
+    .stack-tag {
+      position: absolute;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background-color: rgba(31, 41, 55, 0.8);
+      color: white;
+      border-radius: 9999px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0px) rotate(0deg); }
+      50%  { transform: translateY(-10px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+
+    @keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+
+section {
+  transition: background 1.5s ease;
+  background-size: 200% 200%;
+}
+
+/* About Me specific gradient */
+#about {
+  background: linear-gradient(135deg, #000000 0%, #111827 50%, #1f2937 100%);
+}
+
+/* Projects specific gradient */
+#projects {
+  background: linear-gradient(to bottom, #1f2937 0%, #111827 50%, #000000 100%);
+}
+
+/* Contact specific gradient */
+#contact {
+  background: linear-gradient(to top, #1f2937 0%, #111827 50%, #000000 100%);
+}
+  </style>
+</head>
+<body class="hidden-scroll">
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center text-green-400 text-sm px-4">
+    <div class="w-full max-w-md">
+      <pre class="typewriter text-sm leading-loose">
+> Starting Karam's Portfolio...
+> composer run dev
+> Compiling assets...
+> Done in 2.14s
+> Welcome.
+      </pre>
+    </div>
+  </div>
+
+ 
+
+
+    <div id="main-site" class="hidden">
+
+
+      <header class="fixed top-0 left-0 w-full z-50 backdrop-blur bg-black/30 border-b border-white/10">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between text-white">
+          <h1 class="font-bold text-lg tracking-wide">KARAM</h1>
+          <ul class="flex space-x-6 text-sm font-medium">
+            <li><a href="#main-site" class="hover:text-green-400">Home</a></li>
+            <li><a href="#about" class="hover:text-green-400">About</a></li>
+            <li><a href="#projects" class="hover:text-green-400">Projects</a></li>
+            <li><a href="#contact" class="hover:text-green-400">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+        <section class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-20 gap-12 relative overflow-hidden" id="about">
+
+            <!-- Decorative Background Circles -->
+            <div class="absolute w-72 h-72 bg-green-500 opacity-10 rounded-full blur-3xl top-10 left-10 z-0"></div>
+            <div class="absolute w-96 h-96 bg-indigo-500 opacity-10 rounded-full blur-3xl bottom-0 right-0 z-0"></div>
+          
+            <!-- Left: Name + Floating stack -->
+            <div class="relative w-full md:w-1/2 flex flex-col items-center text-center z-10">
+
+
+              <div class="relative h-40 w-full pointer-events-none mb-4">
+                <span class="stack-tag animate-float" style="top: 10%; left: 20%;">PHP</span>
+                <span class="stack-tag animate-float" style="top: 30%; left: 60%;">Laravel</span>
+                <span class="stack-tag animate-float" style="top: 10%; left: 70%;">React</span>
+                <span class="stack-tag animate-float" style="top: 50%; left: 10%;">MySQL</span>
+                <span class="stack-tag animate-float" style="top: 40%; left: 80%;">Tailwind</span>
+                <span class="stack-tag animate-float" style="top: 0%; left: 40%;">Livewire</span>
+                <span class="stack-tag animate-float" style="top: 20%; left: 30%;">JavaScript</span>
+                <span class="stack-tag animate-float" style="top: 50%; left: 70%;">jQuery</span>
+                <span class="stack-tag animate-float" style="top: 25%; left: 50%;">Git</span>
+              </div>
+              <h1 class="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-md">Karam Abumuslem</h1>
+          
+              <!-- Floating tech tags -->
+              
+            </div>
+          
+            <!-- Right: About Me card -->
+            <div class="z-10 w-full md:w-1/2 backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 shadow-xl animate-fade-in-up">
+              <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-green-400">About Me</h2>
+            
+              <p class="text-gray-300 text-base md:text-lg leading-relaxed">
+                I'm <span class="text-white font-semibold">Karam Abumuslem</span>, a Full Stack Developer from Jordan, passionate about building efficient and user-friendly web applications.
+                I specialize in <span class="text-green-400">PHP</span>, <span class="text-green-400">Laravel</span>, <span class="text-green-400">React</span>, and <span class="text-green-400">MySQL</span>.
+              </p>
+            
+              <p class="text-gray-300 text-base md:text-lg leading-relaxed mt-4">
+                Currently, I’m interning at <span class="text-white font-medium">AppTrainers</span>, where I’m contributing to real-world projects, improving my skills in APIs, clean architecture, and teamwork.
+                I’ve also trained with <span class="text-white font-medium">Clever Mind POB</span>, gaining solid foundations in frontend and backend development.
+              </p>
+            
+              <p class="text-gray-300 text-base md:text-lg leading-relaxed mt-4">
+                My focus is on writing clean, maintainable code and building applications that are both scalable and fast. I love solving problems, learning new technologies, and pushing my boundaries every day.
+              </p>
+            
+              <p class="text-gray-300 text-base md:text-lg leading-relaxed mt-4">
+                Outside of code, I’m a big fan of terminal aesthetics, and I enjoy creating fun, interactive UIs that reflect developer culture 😎.
+              </p>
+            
+              <p class="text-gray-300 text-base md:text-lg leading-relaxed mt-4">
+                I'm currently <span class="text-green-400 font-medium">open to new opportunities</span> — whether internships, freelance projects, or junior dev roles. Let’s build something awesome together!
+              </p>
+            </div>
+          </section>
+
+         <section id="projects" class="pt-24 bg-gradient-to-b from-black to-gray-900 text-white px-6 py-24">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold">Projects</h2>
+      <p class="text-gray-400 mt-2 text-lg">Some of the things I’ve built recently</p>
+      <div class="w-16 h-1 bg-green-400 mx-auto mt-4 rounded"></div>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Project Card -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg backdrop-blur-md hover:shadow-green-500/20 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-green-400 mb-2">Todo App (Laravel)</h3>
+        <p class="text-gray-300 text-sm mb-4">A clean, full-featured task manager built with Laravel and Blade. Authentication, CRUD, and validation included.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+          <span class="bg-white/10 px-2 py-1 rounded-full">Laravel</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">Blade</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">MySQL</span>
+        </div>
+        <a href="https://github.com/karamk2k/todoLaravel" target="_blank" class="inline-flex items-center gap-2 text-green-400 hover:underline text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12a12.005 12.005 0 0 0 8.208 11.386c.6.112.82-.261.82-.58 0-.287-.01-1.044-.016-2.05-3.338.726-4.042-1.609-4.042-1.609-.546-1.385-1.334-1.754-1.334-1.754-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.236 1.837 1.236 1.07 1.834 2.81 1.304 3.493.997.108-.775.418-1.305.762-1.605-2.664-.305-5.467-1.334-5.467-5.932 0-1.31.468-2.382 1.236-3.221-.124-.305-.535-1.533.117-3.195 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.662.243 2.89.12 3.195.77.84 1.236 1.911 1.236 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.815 1.104.815 2.226 0 1.608-.014 2.905-.014 3.296 0 .321.216.698.825.58A12.004 12.004 0 0 0 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg backdrop-blur-md hover:shadow-green-500/20 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-green-400 mb-2">Todo App (Laravel + React)</h3>
+        <p class="text-gray-300 text-sm mb-4">          Full-stack to-do app with React frontend and Laravel API backend. Realtime updates with smooth UX.        </p>
+        <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+          <span class="bg-white/10 px-2 py-1 rounded-full">Laravel</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">React</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">React Router</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">MySQL</span>
+        </div>
+        <a href="https://github.com/karamk2k/TodoReact" target="_blank" class="inline-flex items-center gap-2 text-green-400 hover:underline text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12a12.005 12.005 0 0 0 8.208 11.386c.6.112.82-.261.82-.58 0-.287-.01-1.044-.016-2.05-3.338.726-4.042-1.609-4.042-1.609-.546-1.385-1.334-1.754-1.334-1.754-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.236 1.837 1.236 1.07 1.834 2.81 1.304 3.493.997.108-.775.418-1.305.762-1.605-2.664-.305-5.467-1.334-5.467-5.932 0-1.31.468-2.382 1.236-3.221-.124-.305-.535-1.533.117-3.195 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.662.243 2.89.12 3.195.77.84 1.236 1.911 1.236 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.815 1.104.815 2.226 0 1.608-.014 2.905-.014 3.296 0 .321.216.698.825.58A12.004 12.004 0 0 0 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg backdrop-blur-md hover:shadow-green-500/20 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-green-400 mb-2">K Chat – Realtime Chat</h3>
+        <p class="text-gray-300 text-sm mb-4">Real-time messaging app using Laravel, Echo, and Pusher with private channels and custom notifications.
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+          <span class="bg-white/10 px-2 py-1 rounded-full">Laravel</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">Blade</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">jQuery</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">MySQL</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">Pusher</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">AJAX</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">Laravel Echo</span>
+        </div>
+        <a href="https://github.com/karamk2k/Kchat" target="_blank" class="inline-flex items-center gap-2 text-green-400 hover:underline text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12a12.005 12.005 0 0 0 8.208 11.386c.6.112.82-.261.82-.58 0-.287-.01-1.044-.016-2.05-3.338.726-4.042-1.609-4.042-1.609-.546-1.385-1.334-1.754-1.334-1.754-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.236 1.837 1.236 1.07 1.834 2.81 1.304 3.493.997.108-.775.418-1.305.762-1.605-2.664-.305-5.467-1.334-5.467-5.932 0-1.31.468-2.382 1.236-3.221-.124-.305-.535-1.533.117-3.195 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.662.243 2.89.12 3.195.77.84 1.236 1.911 1.236 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.815 1.104.815 2.226 0 1.608-.014 2.905-.014 3.296 0 .321.216.698.825.58A12.004 12.004 0 0 0 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg backdrop-blur-md hover:shadow-green-500/20 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-green-400 mb-2">Bus Reservation System</h3>
+        <p class="text-gray-300 text-sm mb-4">Feature-rich system to search, book, and manage bus trips. Built with Laravel 11 + jQuery + AJAX.
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
+          <span class="bg-white/10 px-2 py-1 rounded-full">Laravel</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">Blade</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">jQuery</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">AJAX</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">MySQL</span>
+          <span class="bg-white/10 px-2 py-1 rounded-full">MailTrip</span>
+        </div>
+        <a href="https://github.com/karamk2k/bus_reservation" target="_blank" class="inline-flex items-center gap-2 text-green-400 hover:underline text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12a12.005 12.005 0 0 0 8.208 11.386c.6.112.82-.261.82-.58 0-.287-.01-1.044-.016-2.05-3.338.726-4.042-1.609-4.042-1.609-.546-1.385-1.334-1.754-1.334-1.754-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.236 1.837 1.236 1.07 1.834 2.81 1.304 3.493.997.108-.775.418-1.305.762-1.605-2.664-.305-5.467-1.334-5.467-5.932 0-1.31.468-2.382 1.236-3.221-.124-.305-.535-1.533.117-3.195 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.662.243 2.89.12 3.195.77.84 1.236 1.911 1.236 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.815 1.104.815 2.226 0 1.608-.014 2.905-.014 3.296 0 .321.216.698.825.58A12.004 12.004 0 0 0 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+
+<!-- Add this right after the projects section -->
+<section id="contact" class="py-24 bg-gradient-to-t from-black to-gray-900 text-white px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold">Get In Touch</h2>
+      <p class="text-gray-400 mt-2 text-lg">Let's build something amazing together</p>
+      <div class="w-16 h-1 bg-green-400 mx-auto mt-4 rounded"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 shadow-xl">
+        <h3 class="text-xl font-semibold text-green-400 mb-6">Send me a message</h3>
+        
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+            <input type="text" id="name" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+            <input type="email" id="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+            <textarea id="message" rows="4" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <div class="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 shadow-xl">
+          <h3 class="text-xl font-semibold text-green-400 mb-4">Contact Information</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-300">Email</h4>
+                <a href="mailto:karamkks71@gmail.com" class="text-gray-400 hover:text-green-400 transition">karamkks71@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-300">Phone</h4>
+                <a href="tel:+962790000000" class="text-gray-400 hover:text-green-400 transition">+962 78 970 6819</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-300">Location</h4>
+                <p class="text-gray-400">Amman, Jordan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 shadow-xl">
+          <h3 class="text-xl font-semibold text-green-400 mb-4">Find Me Online</h3>
+          
+          <div class="flex space-x-4">
+            <a href="https://github.com/karamk2k" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 rounded-full p-3 text-gray-300 hover:text-white transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.372 0 0 5.373 0 12a12.005 12.005 0 0 0 8.208 11.386c.6.112.82-.261.82-.58 0-.287-.01-1.044-.016-2.05-3.338.726-4.042-1.609-4.042-1.609-.546-1.385-1.334-1.754-1.334-1.754-1.09-.745.083-.73.083-.73 1.204.084 1.837 1.236 1.837 1.236 1.07 1.834 2.81 1.304 3.493.997.108-.775.418-1.305.762-1.605-2.664-.305-5.467-1.334-5.467-5.932 0-1.31.468-2.382 1.236-3.221-.124-.305-.535-1.533.117-3.195 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.654 1.662.243 2.89.12 3.195.77.84 1.236 1.911 1.236 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.815 1.104.815 2.226 0 1.608-.014 2.905-.014 3.296 0 .321.216.698.825.58A12.004 12.004 0 0 0 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            
+            <a href="https://linkedin.com/in/karam-abumuslem" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 rounded-full p-3 text-gray-300 hover:text-white transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      </div>
+  </div>
+
+  <script>
+   
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+      document.body.classList.remove('hidden-scroll');
+      
+      document.getElementById('main-site').classList.remove('hidden')
+    }, 5000); 
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const options = {
+      threshold: 0.3
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.backgroundPosition = '100% 100%';
+        } else {
+          entry.target.style.backgroundPosition = '0% 0%';
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+  </script>
+</body>
+</html>
